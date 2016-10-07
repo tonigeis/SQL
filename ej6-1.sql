@@ -63,3 +63,15 @@ VALUES
 (7, 'Certificado MS', 'PDF'),
 (8, 'Titulo', 'PDF');
 
+SELECT CONCAT(e.EMPL_FORNAME, " ", e.EMPL_SURNAME) AS FULL_NAME, 
+COUNT(d.DOCS_ID) AS NUM_DOCS
+FROM t_employees e
+INNER JOIN t_documents d
+ON e.EMPL_ID = d.EMPL_ID
+GROUP BY d.EMPL_ID
+ORDER BY NUM_DOCS
+
+
+
+
+
